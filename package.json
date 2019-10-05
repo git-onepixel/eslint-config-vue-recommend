@@ -1,0 +1,33 @@
+{
+  "name": "eslint-config-vue-recommend",
+  "version": "1.0.0",
+  "description": "The eslint recommend configuration for vue.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.vue test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/git-onepixel/eslint-config-vue-recommend.git"
+  },
+  "keywords": [
+    "eslint",
+    "vue"
+  ],
+  "author": "Onepixel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/git-onepixel/eslint-config-vue-recommend/issues"
+  },
+  "homepage": "https://github.com/git-onepixel/eslint-config-vue-recommend#readme",
+  "dependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-vue": "^5.2.3",
+    "vue-eslint-parser": "^6.0.4"
+  }
+}
