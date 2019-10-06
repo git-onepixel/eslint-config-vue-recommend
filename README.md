@@ -24,18 +24,18 @@ yarn add eslint-config-vue-recommend
 
 ## Usage
 
-Creating `.eslintrc.js` file in the root of your project and add the configuration as below: 
+Create the `.eslintrc.js` file in the root of your project and add the configuration as below.
 
 ```javascript
 module.exports = {
   extends: [
     'vue-recommend'
-  ],
-};
+  ]
+}
 ```
 
 ## Testing
-Add the following npm scripts to `package.json`:
+Add the following npm scripts to `package.json`.
 
 ```json
 "scripts": {
@@ -48,12 +48,13 @@ then
 ```bash
 npm run lint
 ```
+So far, your eslint is working properly.
 
 ## Integrating into vscode
 
 Integrating eslint into vscode can check code in real time and fix it automatically when saving code.
 
-You need to install the vscode plugin `eslint`, then create the `.vscode/settings.json` file in the root of your project and add the following configuration.
+What you need to do is install the vscode plugin `eslint`, then create the `.vscode/settings.json` file in the root of your project and add the following configuration.
 
 ```json
 {
@@ -73,9 +74,11 @@ You need to install the vscode plugin `eslint`, then create the `.vscode/setting
 }
 
 ```
-However, eslint can only handle `.js` and `.vue` files. If you want to format `.html`, `.css`, `.less` and `.json` files when you save them, you need to do the following things：
+Now, eslint will automatically fixs code format when you save code.
 
-You need to install the vscode plugin `prettier` and modify the `settings.json` file as below:
+However, eslint can only handle `.js` and `.vue` files. If you want to format `.html`, `.css`, `.less` and `.json` files when you save them, you need to do the following things:
+
+- Install the vscode plugin `prettier` and modify the `settings.json` file as below.
 
 ```json
 {
@@ -108,11 +111,28 @@ You need to install the vscode plugin `prettier` and modify the `settings.json` 
 }
 ```
 
+- Create the `.editorconfig` file in the root of your project and add the configuration as below.
+
+```bash
+root = true
+# 对所有文件生效
+[*] 
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+# 对后缀名为 md 的文件生效
+[*.md] 
+trim_trailing_whitespace = false
+```
+
 ## Integrating into webpack
 
 Integrating eslint into webpack can automatically check code format when executing `npm run dev` or `npm run build`.
 
-You need to install `eslint-loader` and configure it in webpack as follows:
+You need to install the loader `eslint-loader` and configure it in webpack as below.
 
 ```javascript
 module: {
@@ -121,7 +141,7 @@ module: {
       test: /\.(js|vue)$/,
       loader: 'eslint-loader',
       enforce: 'pre',
-      exclude: /node_modules/,
+      exclude: /node_modules/
     }
   ]
 }
